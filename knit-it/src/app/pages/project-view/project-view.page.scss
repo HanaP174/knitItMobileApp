@@ -1,0 +1,38 @@
+ion-card-header {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 5em;
+  background-color: #F7A4A4;
+}
+
+ion-icon {
+  height: 1.5em;
+  width: 1.5em;
+  color: whitesmoke;
+  text-align: right;
+}
+
+.add-part-button {
+  --color: #B6E2A1;
+  --border-color: #B6E2A1;
+}
+
+.add-icon {
+  color: #B6E2A1;
+}
+
+.project-name {
+  color: #1e1e1e;
+  font-size: small;
+  font-weight: 800;
+}
+
+ion-item.item-has-focus {
+  --highlight-background: #FFFBC1;
+
+  ion-label, ion-select::part(icon) {
+    color: #FFFBC1 !important;
+  }
+}

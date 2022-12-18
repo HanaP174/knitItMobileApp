@@ -1,0 +1,57 @@
+<ion-content>
+  <app-menu-header></app-menu-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-button (click)="onDeleteProjectClick()" fill="clear">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+      <ion-text class="project-name">
+        <p>
+          {{project.name}}
+        </p>
+      </ion-text>
+    </ion-card-header>
+  </ion-card>
+
+  <app-counter
+    [(counter)]="project.counter"
+    [(lastModification)]="project.lastModification">
+  </app-counter>
+
+  <ion-card *ngFor="let part of this.project.parts; index as i">
+    <ion-card-header>
+      <ion-button (click)="onDeletePartClick(part)" fill="clear">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+      <ion-card-title class="project-name">
+        {{part.name}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <app-counter
+        [(counter)]="part.counter"
+        [(lastModification)]="part.lastModification">
+      </app-counter>
+      <ion-item>
+        <ion-item>
+          <ion-label position="stacked">Initial rows</ion-label>
+          <ion-input [(ngModel)]="part.rows" placeholder="rows"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Stitches</ion-label>
+          <ion-input [(ngModel)]="part.stitches" placeholder="Number of stitches"></ion-input>
+        </ion-item>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <div class="ion-text-center">
+      <ion-button class="add-part-button" fill="outline" (click)="onAddPartClick()">
+        <ion-icon class="add-icon" slot="start" name="add-circle"></ion-icon>
+        Add new part
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>
