@@ -1,0 +1,7 @@
+{
+  "name": "KnitIt",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
