@@ -3,7 +3,6 @@ import {AlertController, ModalController, ViewDidLeave} from "@ionic/angular";
 import {KnittingProjectService} from "../../service/knitting-project.service";
 import {Router} from "@angular/router";
 import {KnittingProject, Part} from "../../models/knitting-project.model";
-import {CreatePartModalComponent} from "../../components/create-part-modal/create-part-modal.component";
 
 @Component({
   selector: 'app-project-view',
@@ -25,20 +24,20 @@ export class ProjectViewPage implements ViewDidLeave {
     this.knittingProjectService.saveProject(this.project);
   }
 
-  async onAddPartClick() {
-    const modal = await this.modalCtrl.create({
-      component: CreatePartModalComponent,
-    });
-    modal.present();
-
-    const { data, role } = await modal.onWillDismiss();
-
-    if (role === 'confirm') {
-      data.id = this.project.id + this.project.parts.length + 1;
-      this.project.parts.push(data);
-      this.knittingProjectService.saveProject(this.project);
-    }
-  }
+  // async onAddPartClick() {
+  //   // const modal = await this.modalCtrl.create({
+  //   //   component: this.CreatePartModalComponent,
+  //   // });
+  //   modal.present();
+  //
+  //   const { data, role } = await modal.onWillDismiss();
+  //
+  //   if (role === 'confirm') {
+  //     data.id = this.project.id + this.project.parts.length + 1;
+  //     this.project.parts.push(data);
+  //     this.knittingProjectService.saveProject(this.project);
+  //   }
+  // }
 
   onDeleteProjectClick() {
     this.presentAlertToDeleteProject();

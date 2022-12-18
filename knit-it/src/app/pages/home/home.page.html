@@ -1,3 +1,25 @@
 <ion-content>
   <app-menu-header></app-menu-header>
+
+  <ion-card class="empty-card" *ngIf="projects.length === 0">
+    <ion-card-content>
+      You have no projects yet! Let's knit!
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let project of projects" (click)="onCardClick(project)">
+    <ion-card-header>
+      <ion-card-title>{{project.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-content>
+      <ion-row class="status-row">
+        <ion-col size="auto">
+          <ion-icon [ngClass]="project.status" name="radio-button-on"></ion-icon>
+        </ion-col>
+        <ion-col>
+          Status: {{project.status}}
+        </ion-col>
+      </ion-row>
+    </ion-content>
+  </ion-card>
 </ion-content>

@@ -14,10 +14,10 @@
     </ion-card-header>
   </ion-card>
 
-  <app-counter
-    [(counter)]="project.counter"
-    [(lastModification)]="project.lastModification">
-  </app-counter>
+<!--  <app-counter-->
+<!--    [(counter)]="project.counter"-->
+<!--    [(lastModification)]="project.lastModification">-->
+<!--  </app-counter>-->
 
   <ion-card *ngFor="let part of this.project.parts; index as i">
     <ion-card-header>
@@ -29,10 +29,10 @@
       </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <app-counter
-        [(counter)]="part.counter"
-        [(lastModification)]="part.lastModification">
-      </app-counter>
+<!--      <app-counter-->
+<!--        [(counter)]="part.counter"-->
+<!--        [(lastModification)]="part.lastModification">-->
+<!--      </app-counter>-->
       <ion-item>
         <ion-item>
           <ion-label position="stacked">Initial rows</ion-label>
@@ -48,7 +48,7 @@
 
   <ion-card>
     <div class="ion-text-center">
-      <ion-button class="add-part-button" fill="outline" (click)="onAddPartClick()">
+      <ion-button class="add-part-button" fill="outline">
         <ion-icon class="add-icon" slot="start" name="add-circle"></ion-icon>
         Add new part
       </ion-button>
