@@ -1,0 +1,39 @@
+.icon-holder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 5em;
+  height: 5em;
+  color: #F7A4A4;
+  -webkit-animation: animation-icon 3000ms infinite;
+  -moz-animation: animation-icon 3000ms infinite;
+  -o-animation: animation-icon 3000ms infinite;
+  animation: animation-icon 3000ms infinite;
+}
+
+
+@-webkit-keyframes animation-icon {
+  0%   {color:#F7A4A4; }
+  20%  {color:#FEBE8C; }
+  40%  {color:#FFFBC1; }
+  60%  {color:#B6E2A1; }
+  80%  {color:#FFFBC1; }
+  100% {color:#FEBE8C; }
+}
+@keyframes animation-icon {
+  0%   {color:#F7A4A4; }
+  20%  {color:#FEBE8C; }
+  40%  {color:#FFFBC1; }
+  60%  {color:#B6E2A1; }
+  80%  {color:#FFFBC1; }
+  100% {color:#FEBE8C; }
+}
+
+.text {
+  font-size: x-large;
+}
