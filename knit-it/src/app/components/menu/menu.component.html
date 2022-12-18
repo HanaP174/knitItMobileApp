@@ -1,0 +1,18 @@
+<ion-menu content-id="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <div class="toolbar-title">
+        Lets knit!
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list *ngFor="let navigator of navigators">
+      <ion-menu-toggle auto-hide="true">
+        <ion-item [routerLink]="navigator.url" router-direction="forward" href="#">
+          <ion-label>{{navigator.text}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
