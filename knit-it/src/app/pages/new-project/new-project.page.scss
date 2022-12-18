@@ -1,0 +1,56 @@
+ion-card-header {
+  height: 5em;
+  background-color: #F7A4A4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ion-icon {
+  height: 1.5em;
+  width: 1.5em;
+  color: whitesmoke;
+}
+
+.new-project-input{
+  border-bottom: 1px solid #F7A4A4;
+}
+
+ion-item.item-has-focus {
+  --highlight-background: #FFFBC1;
+
+  ion-label, ion-select::part(icon) {
+    color: #FFFBC1 !important;
+  }
+}
+
+ion-select {
+  margin-inline-start: 4rem;
+}
+
+.project-name.has-focus {
+  color: #FFFBC1;
+  border: none;
+}
+
+ion-input {
+  height: 3.5rem;
+}
+
+ion-toggle::part(track),
+ion-toggle.toggle-checked::part(track) {
+  background-color: whitesmoke;
+}
+
+ion-toggle::part(handle) {
+  background-color: #FEBE8C;
+}
+
+ion-toggle.toggle-checked::part(handle) {
+  background-color: #B6E2A1;
+}
+
+.save-button {
+  --color: #F7A4A4;
+  --border-color: #F7A4A4;
+}

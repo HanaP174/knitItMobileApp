@@ -1,0 +1,66 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-button (click)="onBackClick()" fill="clear">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item class="new-project-input">
+        <ion-label position="stacked">Project name:</ion-label>
+        <ion-input class="project-name" placeholder="Enter project name"
+                   [(ngModel)]="project.name"></ion-input>
+      </ion-item>
+
+      <ion-list>
+        <ion-item>
+          <ion-label position="fixed">Status</ion-label>
+          <ion-select [(ngModel)]="this.project.status" interface="popover">
+            <ion-select-option *ngFor="let option of statusKeys"
+                               [value]="option">
+              {{option}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-item>
+        <ion-label position="fixed">Needle size:</ion-label>
+        <ion-input type="number" placeholder="0" [(ngModel)]="project.needleSize"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Yarn details:</ion-label>
+        <ion-input [(ngModel)]="project.yarnDetails"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>More colors</ion-label>
+        <ion-toggle slot="end" [(ngModel)]="project.hasMoreColors" [checked]="project.hasMoreColors"></ion-toggle>
+      </ion-item>
+
+      <ion-item *ngIf="project.hasMoreColors">
+        <ion-label position="fixed">Colors:</ion-label>
+        <ion-input type="number"
+                   [placeholder]="numberOfUsedColors"
+                   [(ngModel)]="numberOfUsedColors"
+                   (ngModelChange)="createArray()"></ion-input>
+      </ion-item>
+
+      <ion-list>
+        <ion-item *ngFor="let color of this.project.colors; let i = index">
+          <ion-label position="fixed">Dye Lot:</ion-label>
+          <ion-input type="number" placeholder="0" [(ngModel)]="project.colors[i]"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="ion-text-center">
+    <ion-button class="save-button" fill="outline" (click)="onSaveClick()">Save</ion-button>
+  </div>
+</ion-content>
