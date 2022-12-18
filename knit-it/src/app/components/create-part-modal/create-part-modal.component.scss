@@ -1,0 +1,15 @@
+.confirm {
+  --color: #B6E2A1;
+}
+
+.cancel {
+  --color: #FEBE8C;
+}
+
+ion-item.item-has-focus {
+  --highlight-background: #FFFBC1;
+
+  ion-label, ion-select::part(icon) {
+    color: #FFFBC1 !important;
+  }
+}

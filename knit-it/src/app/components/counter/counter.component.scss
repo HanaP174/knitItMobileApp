@@ -1,0 +1,35 @@
+.counter-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter {
+  font-size: 8rem;
+  text-align: center;
+}
+
+.counter-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter-button {
+  height: 6rem;
+  width: 7rem;
+}
+
+.counter-icon {
+  height: 6rem;
+  width: 6rem;
+
+  &.add {
+    color: #B6E2A1;
+  }
+
+  &.minus {
+    color: #FEBE8C;
+  }
+}

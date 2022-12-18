@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="cancel" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>New project part</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="confirm" (click)="confirm()">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input [(ngModel)]="projectPart.name" placeholder="Part name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Initial rows</ion-label>
+    <ion-input [(ngModel)]="projectPart.rows" placeholder="rows"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Stitches</ion-label>
+    <ion-input [(ngModel)]="projectPart.stitches" placeholder="Number of stitches"></ion-input>
+  </ion-item>
+</ion-content>
