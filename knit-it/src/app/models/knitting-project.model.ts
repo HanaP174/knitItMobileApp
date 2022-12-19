@@ -10,7 +10,7 @@ export class KnittingProject {
   needleSize: number = 0;
   yarnDetails: string = '';
   hasMoreColors: boolean = false;
-  colors: string[] = [];
+  colors: string[] = Array(1);
   parts: Part[] = [];
   counter: number = 0;
   lastModification: Date = new Date();
