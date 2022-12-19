@@ -32,16 +32,19 @@ export class KnittingProjectService {
   }
 
   async deleteProject(project: KnittingProject) {
-    const indexToDelete = this._projects.indexOf(project);
-    if (indexToDelete != -1) {
-      this._projects.splice(indexToDelete, 1);
+    const projectToDelete = this._projects.find(p => p.id === project.id);
+    if (projectToDelete) {
+      const indexToDelete = this._projects.indexOf(projectToDelete);
+      if (indexToDelete != -1) {
+        this._projects.splice(indexToDelete, 1);
+      }
+      this._projectsIds.delete(project.id);
+      this.sortIds();
+      await Preferences.set({
+        key: 'projects',
+        value: JSON.stringify(this._projects)
+      })
     }
-    this._projectsIds.delete(project.id);
-    this.sortIds();
-    await Preferences.set({
-      key: 'projects',
-      value: JSON.stringify(this._projects)
-    })
   }
 
   async loadState () {

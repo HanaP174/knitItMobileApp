@@ -14,6 +14,8 @@ export class ProjectViewPage implements ViewDidLeave {
 
   project: KnittingProject;
 
+  private saveProject = true;
+
   constructor(private modalCtrl: ModalController,
               private knittingProjectService: KnittingProjectService,
               private alertController: AlertController,
@@ -22,7 +24,9 @@ export class ProjectViewPage implements ViewDidLeave {
   }
 
   ionViewDidLeave() {
-    this.knittingProjectService.saveProject(this.project);
+    if (this.saveProject) {
+      this.knittingProjectService.saveProject(this.project);
+    }
   }
 
   async onAddPartClick() {
@@ -57,6 +61,7 @@ export class ProjectViewPage implements ViewDidLeave {
   }
 
   private deleteProject() {
+    this.saveProject = false;
     this.knittingProjectService.deleteProject(this.project);
     this.router.navigateByUrl('home');
   }
