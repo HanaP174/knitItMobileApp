@@ -3,6 +3,7 @@ import {AlertController, InfiniteScrollCustomEvent, NavController} from "@ionic/
 import {KnittingProjectService} from "../../service/knitting-project.service";
 import {Router} from "@angular/router";
 import {KnittingProject, ProjectStatus} from "../../models/knitting-project.model";
+import {GenerateColorsService} from "../../service/generate-colors.service";
 
 @Component({
   selector: 'app-new-project',
@@ -18,6 +19,7 @@ export class NewProjectPage implements OnInit {
   readonly statusKeys = Object.values(ProjectStatus);
 
   constructor(private knittingProjectService: KnittingProjectService,
+              private generateColorsService: GenerateColorsService,
               private navController: NavController,
               private alertController: AlertController,
               private router: Router) { }
@@ -48,6 +50,21 @@ export class NewProjectPage implements OnInit {
     } else {
       this.presentAlert();
     }
+  }
+
+  onGenerateColorsClick() {
+    this.generateColorsService.generateColors((palette: number[][]) => {
+      this.project.colors = this.printPalette(palette);
+    });
+  }
+
+  private printPalette(palette: number[][]) {
+    console.log(palette);
+    const colors = [];
+    for (const color of palette) {
+      colors.push(color.toString())
+    }
+    return colors;
   }
 
   private init() {

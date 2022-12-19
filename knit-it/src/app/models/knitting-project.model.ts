@@ -28,3 +28,7 @@ export class Part {
   counter: number = 0;
   lastModification: Date = new Date();
 }
+
+export class Palette {
+  result: number[][] = [];
+}

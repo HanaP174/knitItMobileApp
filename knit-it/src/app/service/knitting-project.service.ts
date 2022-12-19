@@ -11,7 +11,6 @@ export class KnittingProjectService {
   private _projectsIds: Set<number> = new Set<number>();
 
   constructor() {
-    // this.removeAll();
     this.loadState();
   }
 

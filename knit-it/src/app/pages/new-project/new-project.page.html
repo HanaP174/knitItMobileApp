@@ -48,10 +48,17 @@
                    (ngModelChange)="createArray()"></ion-input>
       </ion-item>
 
+      <ion-item>
+        <ion-label class="ion-text-wrap">Not sure what colors? Generate it!</ion-label>
+        <ion-button class="generate-button" fill="clear" (click)="onGenerateColorsClick()">
+          <ion-icon slot="icon-only" name="color-palette-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
       <ion-list>
         <ion-item *ngFor="let color of this.project.colors; let i = index">
           <ion-label position="fixed">Dye Lot:</ion-label>
-          <ion-input type="number" placeholder="0" [(ngModel)]="project.colors[i]"></ion-input>
+          <ion-input placeholder="0" [(ngModel)]="project.colors[i]"></ion-input>
+          <ion-icon name="heart" [ngStyle]="{'color': 'rgba(' + color + ')'}"></ion-icon>
         </ion-item>
       </ion-list>
       <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
