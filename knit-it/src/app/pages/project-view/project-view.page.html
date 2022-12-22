@@ -19,6 +19,13 @@
     [(lastModification)]="project.lastModification">
   </app-counter>
 
+  <ion-card>
+    <ion-card-header class="project-name" (click)="projectDetailOpened = !projectDetailOpened">Project details</ion-card-header>
+    <ion-card-content *ngIf="projectDetailOpened">
+      <app-project-info [(project)]="project"></app-project-info>
+    </ion-card-content>
+  </ion-card>
+
   <ion-card *ngFor="let part of this.project.parts; index as i">
     <ion-card-header>
       <ion-button (click)="onDeletePartClick(part)" fill="clear">

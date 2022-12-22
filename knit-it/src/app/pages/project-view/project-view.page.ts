@@ -13,6 +13,7 @@ import {CreatePartModalComponent} from "../../components/create-part-modal/creat
 export class ProjectViewPage implements ViewDidLeave {
 
   project: KnittingProject;
+  projectDetailOpened = false;
 
   private saveProject = true;
 

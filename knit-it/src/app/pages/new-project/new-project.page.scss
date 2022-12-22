@@ -24,10 +24,6 @@ ion-item.item-has-focus {
   }
 }
 
-ion-select {
-  margin-inline-start: 4rem;
-}
-
 .project-name.has-focus {
   color: #FFFBC1;
   border: none;
@@ -37,25 +33,7 @@ ion-input {
   height: 3.5rem;
 }
 
-ion-toggle::part(track),
-ion-toggle.toggle-checked::part(track) {
-  background-color: whitesmoke;
-}
-
-ion-toggle::part(handle) {
-  background-color: #FEBE8C;
-}
-
-ion-toggle.toggle-checked::part(handle) {
-  background-color: #B6E2A1;
-}
-
 .save-button {
   --color: #F7A4A4;
   --border-color: #F7A4A4;
-}
-
-.generate-button {
-  height: 4rem;
-  width: 5rem;
 }

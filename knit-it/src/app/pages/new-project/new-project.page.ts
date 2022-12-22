@@ -3,7 +3,6 @@ import {AlertController, InfiniteScrollCustomEvent, NavController} from "@ionic/
 import {KnittingProjectService} from "../../service/knitting-project.service";
 import {Router} from "@angular/router";
 import {KnittingProject, ProjectStatus} from "../../models/knitting-project.model";
-import {GenerateColorsService} from "../../service/generate-colors.service";
 
 @Component({
   selector: 'app-new-project',
@@ -13,23 +12,15 @@ import {GenerateColorsService} from "../../service/generate-colors.service";
 export class NewProjectPage implements OnInit {
 
   selectStatusOptions: ProjectStatus[] = [];
-  numberOfUsedColors: number = 1;
   project: KnittingProject = new KnittingProject();
 
-  readonly statusKeys = Object.values(ProjectStatus);
-
   constructor(private knittingProjectService: KnittingProjectService,
-              private generateColorsService: GenerateColorsService,
               private navController: NavController,
               private alertController: AlertController,
               private router: Router) { }
 
   ngOnInit() {
     this.init()
-  }
-
-  createArray() {
-    this.project.colors = Array(this.numberOfUsedColors);
   }
 
   onIonInfinite(event: Event) {
@@ -50,21 +41,6 @@ export class NewProjectPage implements OnInit {
     } else {
       this.presentAlert();
     }
-  }
-
-  onGenerateColorsClick() {
-    this.generateColorsService.generateColors((palette: number[][]) => {
-      this.project.colors = this.printPalette(palette);
-    });
-  }
-
-  private printPalette(palette: number[][]) {
-    console.log(palette);
-    const colors = [];
-    for (const color of palette) {
-      colors.push(color.toString())
-    }
-    return colors;
   }
 
   private init() {

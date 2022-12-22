@@ -1,0 +1,39 @@
+.generate-button {
+  height: 4rem;
+  width: 3em;
+}
+
+ion-toggle::part(track),
+ion-toggle.toggle-checked::part(track) {
+  background-color: whitesmoke;
+}
+
+ion-toggle::part(handle) {
+  background-color: #FEBE8C;
+}
+
+ion-toggle.toggle-checked::part(handle) {
+  background-color: #B6E2A1;
+}
+
+ion-input {
+  height: 3.5rem;
+}
+
+ion-select {
+  margin-inline-start: 4rem;
+}
+
+ion-item.item-has-focus {
+  --highlight-background: #FFFBC1;
+
+  ion-label, ion-select::part(icon) {
+    color: #FFFBC1 !important;
+  }
+}
+
+ion-icon {
+  height: 1.5em;
+  width: 1.5em;
+  color: whitesmoke;
+}
