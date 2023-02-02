@@ -15,7 +15,7 @@ export class GenerateColorsService {
       model: 'default',
       input : ['N','N','N','N','N']
     }
-    const result = this.httpService.post<Palette>('http://colormind.io/api/', JSON.stringify(data));
+    const result = this.httpService.post<Palette>('https://colormind.io/api/', JSON.stringify(data));
     result.subscribe(palette => {
       return callback(palette.result);
     })
